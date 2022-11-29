@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import Yorumlar from '../Yorumlar/Yorumlar';
 import BeğenBölümü from './BeğenBölümü';
@@ -21,9 +23,11 @@ const Gönderi = props => {
         />
       </div>
       {/* BeğenBölümü düzgün çalışması için ihtiyaç duyduğu tüm proplara sahip mi? */}
-      <BeğenBölümü gonderiyiBegen={() => gonderiyiBegen(gönderi.id)}/>
+      <BeğenBölümü 
+      begeniSayisi = {gönderi.likes}
+      gonderiyiBegen={() => gonderiyiBegen(gönderi.id)}/>
       {/* Yorumlar da proplara dikkat istiyor! */}
-      <Yorumlar />
+      <Yorumlar yorumlar={gönderi.comments} />
     </div>
   );
 };
